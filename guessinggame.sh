@@ -1,6 +1,6 @@
 function get_number {
 	local g="x"
-	local regexp="^[0-9]+$"
+	local regexp="^([1-9]+[0-9]*)*0*$"
 	while [[ ! $g =~ $regexp ]]
 	do
 		read g
@@ -10,7 +10,7 @@ function get_number {
 
 echo "How many files are in the current directory ? (Please enter a number >=0)"
 g=$(get_number)
-nf=$(ls -la | egrep "^[-]" | wc -l)
+nf=$(($(ls -1a | wc -l)-2))
 
 while [[ ! $g -eq $nf ]]
 do
