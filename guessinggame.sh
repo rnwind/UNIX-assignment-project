@@ -2,7 +2,7 @@ function guessinggame {
 
 	echo "How many files are in the current directory ?"
 	read g
-	nf=$(ls -1 | wc -l)
+	nf=$(ls -la | egrep "^[-]" | wc -l)
 
 	while [[ ! $g -eq $nf ]]
 	do

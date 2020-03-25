@@ -5,7 +5,7 @@ README.md: guessinggame.sh
 	printf  "### Creation date: " >> README.md
 	date +"%D %T" >> README.md
 	printf "### Number of lines of code: " >> README.md
-	cat guessinggame.sh | wc -l|bc >> README.md
+	cat guessinggame.sh | wc -l | egrep -o "[0-9]+" >> README.md
 
 clean:
 	rm README.md
