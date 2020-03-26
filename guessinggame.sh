@@ -1,7 +1,7 @@
 function get_number {
 	local g="x"
 	local regexp="^([1-9]+[0-9]*)*0*$"
-	while [[ ! $g =~ $regexp ]] || [[ $g = "" ]]
+	while [[ ! $g =~ $regexp ]] || [[ $g = "" ]] || [[ $g -lt 0 ]]
 	do
 		read g
 	done
